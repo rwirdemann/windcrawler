@@ -8,8 +8,7 @@ def get_url_content():
     return requests.get(url).text
 
 
-def get_blog_content():
-    content = get_url_content()
+def parse(content):
     soup = BeautifulSoup(content, "html.parser")
 
     rows = get_rows(soup, 'Leuchtturm')
@@ -23,7 +22,7 @@ def get_blog_content():
                 v = cols[1].text.strip()
                 if k == 'Windrichtung' or k == 'Windgeschwindigkeit':
                     output = '%s %s: %s' % (output, k, v)
-        print(output)
+        return output
 
 
 class Rows:
@@ -50,4 +49,7 @@ def get_rows(soup, table):
                 return Rows(label, ts, t.findAll('tr'))
 
 
-get_blog_content()
+if __name__ == '__main__':
+    content = get_url_content()
+    out = parse(content)
+    print(out)
