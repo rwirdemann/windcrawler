@@ -7,7 +7,7 @@ url = 'https://www.geomar.de/service/wetter'
 
 
 def parse(html):
-    """Parses the given html.
+    """Parses the given html and returns a tuple of weather information for a specific location.
     """
     soup = BeautifulSoup(html, "html.parser")
 
