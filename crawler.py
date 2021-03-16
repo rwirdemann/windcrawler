@@ -1,5 +1,8 @@
-import requests
+import sys
+sys.path.insert(0, 'src/vendor')
 from bs4 import BeautifulSoup
+import requests
+
 
 url = 'https://www.geomar.de/service/wetter'
 
