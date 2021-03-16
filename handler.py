@@ -1,4 +1,4 @@
-from crawler import parse
+from parser import parse
 import sys
 sys.path.insert(0, 'src/vendor')
 import requests
