@@ -8,6 +8,23 @@ python3 crawler.py
 ```
 
 ## Run tests
+
 ```
 python3 crawler_test.py
+```
+
+## Deployment
+
+```
+cd pulumi
+pulumi up
+curl $(pulumi stack output url)
+```
+
+## Cleanup
+
+```
+cd pulumi
+pulumi destroy
+pulumi stack rm
 ```

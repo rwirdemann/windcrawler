@@ -4,10 +4,6 @@ from bs4 import BeautifulSoup
 url = 'https://www.geomar.de/service/wetter'
 
 
-def get_url_content():
-    return requests.get(url).text
-
-
 def parse(content):
     soup = BeautifulSoup(content, "html.parser")
 
@@ -50,6 +46,6 @@ def get_rows(soup, table):
 
 
 if __name__ == '__main__':
-    content = get_url_content()
+    content = requests.get(url).text
     out = parse(content)
     print(out)
