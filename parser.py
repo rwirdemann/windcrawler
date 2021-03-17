@@ -23,7 +23,7 @@ def parse(html):
                     direction = v                
                 if k == 'Windgeschwindigkeit':
                     speed = v
-        return (label, ts, direction, speed)
+        return ('Kiel ' + label, ts, direction, speed)
 
 
 def get_rows(soup, table):

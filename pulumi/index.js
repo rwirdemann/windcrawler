@@ -32,7 +32,10 @@ const pythonLambda = new aws.lambda.Function("windcrawler", {
 });
 
 const api = new awsx.apigateway.API("windcrawler", {
-    routes: [{ path: "/", method: "GET", eventHandler: pythonLambda }],
+    routes: [{
+        path: "/", 
+        method: "GET", 
+        eventHandler: pythonLambda }],
 })
 
 exports.url = api.url;
